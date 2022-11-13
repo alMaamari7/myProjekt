@@ -1,38 +1,20 @@
 package de.htwberlin.webtech.demo.web;
 
-public class KontaktPerson {
+public class KontaktPersonCreateRequest {
 
-    private Long id;
+
+
     private String firstName;
     private String surname;
     private String eMailAddresse;
     private String phoneNumber;
 
 
-
-    public KontaktPerson(Long id, String name, String surname, String eMailAddresse, String phoneNumber) {
-        this.id=id;
-        this.firstName = name;
-        this.surname = surname;
-        this.eMailAddresse = eMailAddresse;
-        this.phoneNumber = phoneNumber;
-    }
-
-/*
-    public KontaktPerson(long id, String firstName, String surname, String eMailAddresse, String phoneNumber) {
-        this.id = id;
+    public KontaktPersonCreateRequest(String firstName, String surname, String eMailAddresse, String phoneNumber) {
         this.firstName = firstName;
         this.surname = surname;
         this.eMailAddresse = eMailAddresse;
         this.phoneNumber = phoneNumber;
-    }*/
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getFirstName() {
@@ -66,6 +48,4 @@ public class KontaktPerson {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-
-
 }

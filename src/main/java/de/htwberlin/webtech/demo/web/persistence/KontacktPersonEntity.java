@@ -1,38 +1,44 @@
-package de.htwberlin.webtech.demo.web;
+package de.htwberlin.webtech.demo.web.persistence;
 
-public class KontaktPerson {
 
+import javax.persistence.*;
+
+@Entity(name= "persons")
+public class KontacktPersonEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private Long id;
+
+    @Column(name = "first_name",nullable = false)
     private String firstName;
+
+    @Column(name= "sur_name",nullable = false)
     private String surname;
+
+    @Column(name= "e_mail")
     private String eMailAddresse;
+
+    @Column(name= "phone_num")
     private String phoneNumber;
 
+    //@Column
+   // private Addresse addresse;
 
 
-    public KontaktPerson(Long id, String name, String surname, String eMailAddresse, String phoneNumber) {
-        this.id=id;
+    public KontacktPersonEntity(String name, String surname, String eMailAddresse, String phoneNumber) {
         this.firstName = name;
         this.surname = surname;
         this.eMailAddresse = eMailAddresse;
         this.phoneNumber = phoneNumber;
     }
 
-/*
-    public KontaktPerson(long id, String firstName, String surname, String eMailAddresse, String phoneNumber) {
-        this.id = id;
-        this.firstName = firstName;
-        this.surname = surname;
-        this.eMailAddresse = eMailAddresse;
-        this.phoneNumber = phoneNumber;
-    }*/
+
+    protected KontacktPersonEntity(){}
+
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getFirstName() {
@@ -66,6 +72,4 @@ public class KontaktPerson {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-
-
 }

@@ -1,24 +1,24 @@
 package de.htwberlin.webtech.demo.web;
 
-public class Addresse {
-
-   private Long id;
-   private String addresArt;
-   private String street;
-   private int houseNumber;
-   private int postalCode;
-   private String city;
+public class AddresseCreateRequest {
 
 
-    public Addresse(String art ,String street, int houseNumber, int postalCode, String city) {
-        this.addresArt=art;
+    private String addresArt;
+    private String street;
+    private int houseNumber;
+    private int postalCode;
+    private String city;
+    private String country;
+
+
+    public AddresseCreateRequest(String addresArt, String street, int houseNumber, int postalCode, String city, String country) {
+        this.addresArt = addresArt;
         this.street = street;
         this.houseNumber = houseNumber;
         this.postalCode = postalCode;
         this.city = city;
-
+        this.country=country;
     }
-
 
     public String getAddresArt() {
         return addresArt;
@@ -60,11 +60,11 @@ public class Addresse {
         this.city = city;
     }
 
-    public Long getId() {
-        return id;
+    public String getCountry() {
+        return country;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setCountry(String country) {
+        this.country = country;
     }
 }
