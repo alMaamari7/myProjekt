@@ -46,27 +46,19 @@ public class BookAddressService {
     }
 
 
-
 /*
-   public List<Void> findAllAddressBookList() {
+public AddressBook fetchAddressePerson(){
 
-       String type = typeOfAdress();
-       Long id = 0L;
-       List<AddressEntity> addressEntityList = addressRepository.findAllByPersonId();
-       for (AddressEntity address : addressEntityList) {
-           id = address.getPersonId();
-       }
-       List<KontacktPersonEntity> persons = personRepository.findAllById(id);
-       List<AddressBook> addressBookList = new ArrayList<>();
-   return addressBookList;
-   }
-*/
+   return new AddressBook();
+}
 
-    public String typeOfAdress(){
+ */
+
+    public String changeIdToString(Long id){
         typeOfAddress();
        Long art =0L;
         String type= "Null";
-        List<AddressEntity> addressen = addressRepository.findAllByPersonId();
+        List<AddressEntity> addressen = addressRepository.findAllByPersonId(id);
         for( AddressEntity person : addressen){
             art = person.getKindOfAddress();
              type=  typeOfAddress.get(art);
@@ -82,10 +74,10 @@ public class BookAddressService {
         var personWithId = personRepository.save(personEntity);
         Long personId = personWithId.getId();
         var address = new AddresseCreateRequest(request.getAddresseCreateRequest().getAddresArt(),request.getAddresseCreateRequest().getStreet(),request.getAddresseCreateRequest().getHouseNumber(),request.getAddresseCreateRequest().getHouseNumber(),request.getAddresseCreateRequest().getCity(),request.getAddresseCreateRequest().getCountry());
-        var adressbook = new AddressBookCreateRequest(person, address);
-        Long addresId= getKeyFromValue( request.getAddresseCreateRequest().getAddresArt());
-        var addressEntinty = new AddressEntity(personId,addresId,adressbook.getAddresseCreateRequest().getStreet(),adressbook.getAddresseCreateRequest().getHouseNumber(),adressbook.getAddresseCreateRequest().getPostalCode(),adressbook.getAddresseCreateRequest().getCity(),adressbook.getAddresseCreateRequest().getCountry());
-       return new AddressBook(personId,addresId);
+        Long addressArtId = getKeyFromValue(address.getAddresArt());
+        var addressEntinty = new AddressEntity(personId,addressArtId,address.getStreet(),address.getHouseNumber(),address.getPostalCode(),address.getCity(),address.getCountry());
+        var addressWithId = addressRepository.save(addressEntinty);
+       return new AddressBook(personId,addressWithId.getId());
     }
 
 /*
