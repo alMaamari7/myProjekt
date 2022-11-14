@@ -9,12 +9,12 @@ public class AddressBookEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
-    Long id;
+  private   Long id;
 
     @Column(nullable = false)
-    Long personId;
+   private Long personId;
 
-    @Column(nullable = false)
+   private @Column(nullable = false)
     Long addressId;
 
 
