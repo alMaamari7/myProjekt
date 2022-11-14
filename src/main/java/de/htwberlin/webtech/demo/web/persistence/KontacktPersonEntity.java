@@ -5,6 +5,9 @@ import javax.persistence.*;
 
 @Entity(name= "persons")
 public class KontacktPersonEntity {
+
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
@@ -22,8 +25,7 @@ public class KontacktPersonEntity {
     @Column(name= "phone_num")
     private String phoneNumber;
 
-    //@Column
-   // private Addresse addresse;
+
 
 
     public KontacktPersonEntity(String name, String surname, String eMailAddresse, String phoneNumber) {
