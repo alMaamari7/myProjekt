@@ -9,13 +9,13 @@ public class AddressBookEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
-  private   Long id;
+    private Long id;
 
     @Column(nullable = false)
-   private Long personId;
+    private Long personId;
 
-   private @Column(nullable = false)
-    Long addressId;
+    @Column(nullable = false)
+    private Long addressId;
 
 
     public AddressBookEntity(Long personId, Long addressId) {
