@@ -8,16 +8,21 @@ public class Addresse {
    private int houseNumber;
    private int postalCode;
    private String city;
+   private String country;
 
 
-    public Addresse(String art ,String street, int houseNumber, int postalCode, String city) {
+    public Addresse( Long id, String art ,String street, int houseNumber, int postalCode, String city, String country) {
+        this.id=id;
         this.addresArt=art;
         this.street = street;
         this.houseNumber = houseNumber;
         this.postalCode = postalCode;
         this.city = city;
+        this.country=country;
 
     }
+
+
 
 
     public String getAddresArt() {
@@ -66,5 +71,18 @@ public class Addresse {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    @Override
+    public String toString() {
+        return addresArt+" "+street + " " + houseNumber+" "+ postalCode+ " "+city+" "+ country;
     }
 }

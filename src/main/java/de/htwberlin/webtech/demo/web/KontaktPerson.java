@@ -10,22 +10,17 @@ public class KontaktPerson {
 
 
 
+
     public KontaktPerson(Long id, String name, String surname, String eMailAddresse, String phoneNumber) {
         this.id=id;
         this.firstName = name;
         this.surname = surname;
         this.eMailAddresse = eMailAddresse;
         this.phoneNumber = phoneNumber;
+
     }
 
-/*
-    public KontaktPerson(long id, String firstName, String surname, String eMailAddresse, String phoneNumber) {
-        this.id = id;
-        this.firstName = firstName;
-        this.surname = surname;
-        this.eMailAddresse = eMailAddresse;
-        this.phoneNumber = phoneNumber;
-    }*/
+
 
     public Long getId() {
         return id;
@@ -68,4 +63,8 @@ public class KontaktPerson {
     }
 
 
+    @Override
+    public String toString() {
+        return firstName+" "+surname+" "+phoneNumber+" "+eMailAddresse+" ";
+    }
 }

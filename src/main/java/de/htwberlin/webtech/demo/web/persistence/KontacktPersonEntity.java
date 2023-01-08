@@ -33,6 +33,7 @@ public class KontacktPersonEntity {
         this.surname = surname;
         this.eMailAddresse = eMailAddresse;
         this.phoneNumber = phoneNumber;
+
     }
 
 
@@ -74,4 +75,7 @@ public class KontacktPersonEntity {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
+
+
 }

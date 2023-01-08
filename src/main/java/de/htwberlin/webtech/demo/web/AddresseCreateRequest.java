@@ -9,9 +9,10 @@ public class AddresseCreateRequest {
     private int postalCode;
     private String city;
     private String country;
+    private Long id;
 
 
-    public AddresseCreateRequest(String addresArt, String street, int houseNumber, int postalCode, String city, String country) {
+    public AddresseCreateRequest(  String addresArt, String street, int houseNumber, int postalCode, String city, String country) {
         this.addresArt = addresArt;
         this.street = street;
         this.houseNumber = houseNumber;
@@ -19,6 +20,16 @@ public class AddresseCreateRequest {
         this.city = city;
         this.country=country;
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public AddresseCreateRequest() {}
 
     public String getAddresArt() {
         return addresArt;

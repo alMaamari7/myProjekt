@@ -11,4 +11,5 @@ import java.util.List;
 public interface AddressBookRepository extends JpaRepository<AddressBookEntity, Long> {
 
     List<AddressBookEntity> findAllByPersonId(Long id);
+    AddressBookEntity findByPersonId(Long id);
 }

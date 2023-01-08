@@ -111,4 +111,8 @@ public class AddressEntity {
     public void setCity(String city) {
         this.city = city;
     }
+
+    public void setKindOfAddress(Long kindOfAddress) {
+        this.kindOfAddress = kindOfAddress;
+    }
 }
